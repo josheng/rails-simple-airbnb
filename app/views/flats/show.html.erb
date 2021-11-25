@@ -1,0 +1,48 @@
+<div style="background-image: url('https://source.unsplash.com/random/?castle')" class="hero"></div>
+
+<div class="container mt-n5">
+  <div class="row">
+    <div class="col-8">
+      <div class="card mb-2">
+        <div class="card-body">
+          <h5 class="card-title"><%= @flat.name %></h5>
+          <p class="card-text"><%= @flat.address %></p>
+        </div>
+      </div>
+      <div class="card mb-2">
+        <div class="card-body">
+          <h5 class="card-title">More about this flat</h5>
+          <p class="card-text"><%= @flat.description %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card mb-2">
+        <div class="card-body">
+          <h5 class="card-title">Book this shit man!</h5>
+          <%= link_to "Button", root_path  %>
+        </div>
+      </div>
+      <div class="card mb-2">
+        <div class="card-body">
+          <h5 class="card-title">Details</h5>
+          <p class="card-text">
+            <i class="fas fa-users pr-2"></i><%= @flat.number_of_guests %>
+            <i class="fas fa-dollar-sign pl-4 pr-2"></i><%= @flat.price_per_night %>
+          </p>
+        </div>
+      </div>
+      <div class="card mb-2">
+        <div class="card-body">
+          <h5 class="card-title">Share this shit yo</h5>
+          <p class="card-text">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

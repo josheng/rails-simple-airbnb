@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Your Search Result</h1>
+    <p>You searched for <b><%= @queryname %></b>, We found <%= @flats.count %> flats out of <%= @total %> on our website.</p>
+<div class="row row-cols-1 row-cols-md-3 my-3">
+<% @flats.each do |flat| %>
+  <div class="col mb-4 card-group">
+    <div class="flat card">
+      <img src="https://source.unsplash.com/random/?castle" class="card-img-top img-fluid">
+      <div class="card-body">
+        <h5 class="card-title"><%= flat.name %></h5>
+        <p class="card-text"><%= flat.address %></p>
+        <p class="card-text">
+        <i class="fas fa-users pr-2"></i><%= flat.number_of_guests %>
+        <i class="fas fa-dollar-sign pl-4 pr-2"></i><%= flat.price_per_night %>
+        </p>
+      </div>
+      <div class="card-footer bg-transparent">
+        <%= link_to "More Info", flat_path(flat), class: "text-primary text-left"  %>
+        <%= link_to "Edit Flat", flat_path(flat), class: "text-warning text-center"  %>
+        <%= link_to "Delete Flat", flat_path(flat), class: "text-danger text-right"  %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+</div>

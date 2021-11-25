@@ -1,0 +1,11 @@
+<div class="container">
+<h1>Add a New Flat</h1>
+<%= simple_form_for(@flat) do |f| %>
+  <%= f.input :name  %>
+  <%= f.input :address  %>
+  <%= f.input :description, as: :text  %>
+  <%= f.input :price_per_night, as: :integer  %>
+  <%= f.input :number_of_guests, as: :integer  %>
+  <%= f.submit "Create Flat", class: "btn btn-primary"  %><%= link_to "Cancel", new_flat_path, class: "btn btn-danger mx-2"  %>
+<% end %>
+</div>

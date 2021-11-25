@@ -5,12 +5,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <nav class="navbar navbar-light bg-light">
+  <%= link_to "Simple Airbnb", root_path, class: "navbar-brand"  %>
+  <%= simple_form_for(:search, url: flats_search_path, method: "GET", html: { class: "form-inline"}) do |f| %>
+    <%= f.input :name, label: false, class: "form-control mr-sm-2" %>
+    <%= f.submit "Search", class: "btn btn-outline-success my-2 my-sm-0 mx-1" %>
+    <%= link_to "Add Flat", new_flat_path, class: "btn btn-outline-primary my-2 my-sm-0"  %>
+
+  <% end %>
+
+  <%# <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0 mx-1" type="submit">Search</button>
+  </form> %>
+</nav>
+
     <%= yield %>
+
   </body>
 </html>
